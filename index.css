@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  /* background-image: url("./images/satdium.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+}
+nav {
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  min-height: 10vh;
+  width: 100vw;
+}
+.logo {
+  color: aqua;
+  letter-spacing: 4px;
+}
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+.menu ul {
+  list-style: none;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu ul a {
+  background-color: red;
+  text-decoration: none;
+  color: aqua;
+  padding: 0 15px;
+  border-radius: 70px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 90vh;
+  width: 100%;
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.icon img {
+  border-left: 5px solid #38003d;
+  border-right: 5px solid #38003d;
+  border-bottom: 5px solid #38003d;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 80px;
+  background-color: #fff;
+}
+
+.content {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 50px;
+  width: 1200px;
+  background-color: #fff;
+  border-left: 5px solid #38003d;
+  border-right: 5px solid #38003d;
+  border-bottom: 5px solid #38003d;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.teams {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 5px solid yellow;
+  height: 30px;
+  width: 90%;
+  font-size: 16px;
+}
+.position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95%;
+  width: 30px;
+  background-color: tomato;
+  color: #fff;
+}
+.teams .club.big.slot1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+
+  color: #fff;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 5px solid yellow;
+  height: 30px;
+  width: 90%;
+  background-color: red;
+}
+.club,
+.played,
+.win,
+.draw,
+.lose,
+.goalagainst,
+.goalfor,
+.goaldiff,
+.points,
+.form {
+  height: 90%;
+  width: 50px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.big {
+  width: 30%;
+}
+.played {
+  margin-left: 100px;
+}
+.slot2,
+.slot3,
+.slot4,
+.slot5,
+.slot6,
+.slot7,
+.slot8,
+.slot9,
+.slot10 {
+  margin-right: 15px;
+  width: 50px;
+  background-color: chartreuse;
+}
+
+.form {
+  width: 85px;
+}
