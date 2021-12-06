@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;600;700;800&family=Poppins:wght@200;300;600;700&family=Source+Sans+Pro:wght@200;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-size: 100%;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+}
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(2, 4, 29, 0.7);
+  position: absolute;
+  z-index: 600;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+}
+.\.modal-overlay {
+  display: flex;
+  align-items: center;
+  padding: 5rem;
+  flex-direction: column;
+  position: relative;
+  width: 40%;
+  height: 40%;
+  color: rgb(2, 4, 29);
+  border-radius: 2rem;
+  background-color: #fff;
+  transition: all 0.5s ease;
+}
+.\.modal-overlay p {
+  text-align: center;
+  margin-top: 1rem;
+}
+.content {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  background: url("./images/pl-logo.png") no-repeat center,
+    linear-gradient(to top right, #000000 10%, #080811 60%, #043346 100%);
+  background-size: cover;
+  background-blend-mode: multiply;
+  overflow: hidden;
+}
+/*                        Shape divier          */
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(273% + 1.3px);
+  height: 225px;
+}
+
+.wave .shape-fill {
+  fill: #9696e6;
+}
+/* /////////////////////////////////////////////////////////// */
+
+header {
+  width: 95%;
+  min-height: 8vh;
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  position: relative;
+}
+header h1 {
+  color: #e2e2e2;
+  background-color: #000000;
+  box-shadow: 0rem 0rem 0.5rem 0.1rem rgba(219, 189, 189, 0.5);
+  padding: 0.2rem 1rem;
+  font-size: 1.3rem;
+  border-radius: 20rem;
+  background-clip: border-box;
+  border: 0.2rem solid transparent;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+header h1:hover {
+  color: #000000;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.5);
+  background-color: #e2e2e2;
+}
+header h1 span {
+  color: red;
+}
+.image {
+  position: absolute;
+  width: 10rem;
+  bottom: -8rem;
+  left: 2rem;
+}
+.image img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+main {
+  width: 50%;
+  min-height: 92vh;
+  margin: auto;
+  z-index: 100;
+  position: relative;
+}
+body .contact {
+  position: absolute;
+  height: 20rem;
+  width: 15rem;
+  top: 30%;
+  left: 40%;
+  z-index: 500;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out --0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem 1rem 1rem;
+}
+body .contact.active {
+  visibility: visible;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+body .contact h4,
+body .contact p {
+  margin-bottom: 0.5rem;
+  font-size: 80%;
+  color: rgb(2, 4, 29);
+}
+body .contact h4 {
+  font-size: 150%;
+}
+body .contact .socials {
+  height: 2rem;
+  width: 70%;
+  margin-top: 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact .socials a {
+  color: rgb(2, 4, 29);
+  height: 100%;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.table-container {
+  width: 95%;
+  min-height: 87vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(2, 4, 29, 0.5);
+  border-radius: 1rem;
+  box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.5);
+  background-clip: border-box;
+  border: 0.2rem solid transparent;
+}
+table {
+  margin: auto;
+  color: #e2e2e2;
+  width: 90%;
+  border-collapse: collapse;
+}
+thead tr {
+  height: 3rem;
+}
+thead,
+thead tr,
+tbody,
+tbody tr {
+  width: 100%;
+}
+table th,
+table td {
+  width: 1rem;
+  padding: 0.3rem 0.5rem;
+  text-align: left;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+table td {
+  font-size: 0.7rem;
+  border-bottom: 0.1rem solid #070714;
+}
+table tbody tr {
+  background-color: #030408;
+  height: 1rem;
+}
+table tbody tr:nth-of-type(even) {
+  background-color: #030408;
+}
+table tbody td:first-child {
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+  width: 1rem;
+  height: 100%;
+  padding: 0;
+  position: relative;
+}
+table tbody td:nth-child(3) {
+  width: 10rem;
+}
+table tbody td:last-child {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  width: 2.5rem;
+}
+table tbody td img {
+  width: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+table tbody tr:hover {
+  background-color: #151b31;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease;
+  column-gap: 0rem;
+}
+table tbody tr:nth-child(17) td:first-child::before,
+table tbody tr:nth-child(18) td:first-child::before,
+table tbody tr:nth-child(19) td:first-child::before,
+table tbody tr:nth-child(20) td:first-child::before,
+table tbody tr:nth-child(1) td:first-child::before,
+table tbody tr:nth-child(2) td:first-child::before,
+table tbody tr:nth-child(3) td:first-child::before,
+table tbody tr:nth-child(4) td:first-child::before,
+table tbody tr:nth-child(5) td:first-child::before {
+  content: "";
+  position: absolute;
+  height: 60%;
+  width: 0.2rem;
+  background-color: #ff1846;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+table tbody tr:nth-child(1) td:first-child::before,
+table tbody tr:nth-child(2) td:first-child::before,
+table tbody tr:nth-child(3) td:first-child::before,
+table tbody tr:nth-child(4) td:first-child::before {
+  background-color: #0003ad;
+}
+table tbody tr:nth-child(5) td:first-child::before {
+  background-color: #08da94;
+}
+.toggle-menu {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: rgba(3, 4, 8, 0.8);
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  border-radius: 100rem;
+  box-shadow: 0rem 0rem 0.5rem 0.1rem rgba(219, 189, 189, 0.5);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 300;
+  transition: all 0.5s ease;
+}
+.menu-slide {
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  left: 7rem;
+  top: -3rem;
+  border-radius: 100rem;
+  z-index: 300;
+  transform: translate(333%, 96%);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.menu-slide.active {
+  transform: translate(0%, 0%);
+  height: 55rem;
+  width: 55rem;
+  background-color: #fff;
+}
+.toggle-menu span {
+  position: absolute;
+  background-color: #fff;
+  width: 1.7rem;
+  height: 0.2rem;
+  border-radius: 5rem;
+  transition: all 0.5s ease-in-out;
+}
+.toggle-menu span:nth-child(1) {
+  transform: translateY(-0.5rem);
+  width: 1.3rem;
+  left: 0.43rem;
+}
+.toggle-menu.active span:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+  width: 1.7rem;
+}
+.toggle-menu span:nth-child(2) {
+  transform: translateY(0.5rem);
+  width: 0.7rem;
+  left: 0.43rem;
+}
+.toggle-menu.active span:nth-child(2) {
+  transform: translateY(0) rotate(315deg);
+  width: 1.7rem;
+  transition: all 0.5s ease-in-out 0.2s;
+}
+.toggle-menu.active span:nth-child(3) {
+  transform: translateX(2.5rem);
+}
+
+@media only screen and (max-width: 55rem) {
+  .\.modal-overlay {
+    width: 80%;
+    height: 30%;
+    padding: 2rem;
+    padding-top: 3rem;
+  }
+  .menu-slide.active {
+    display: block;
+  }
+  .image {
+    position: relative;
+    width: 10rem;
+    bottom: 0;
+    left: 2rem;
+  }
+  .image img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  .toggle-menu {
+    visibility: visible;
+  }
+  .toggle-menu.active {
+    box-shadow: 0rem 0rem 0.5rem 0.1rem rgba(3, 4, 8, 0.5);
+  }
+  table thead tr th:nth-child(8),
+  table tbody td:nth-child(8),
+  table thead tr th:nth-child(9),
+  table tbody td:nth-child(9),
+  table thead tr th:nth-child(10),
+  table tbody td:nth-child(10),
+  table thead tr th:nth-child(11),
+  table tbody td:nth-child(11) {
+    display: none;
+  }
+  .image {
+    position: absolute;
+    width: 2.5rem;
+    top: 1rem;
+    left: 1rem;
+  }
+  main {
+    width: 100%;
+    min-height: 93vh;
+    left: 0;
+    z-index: 100;
+    position: relative;
+  }
+  .table-container {
+    width: 98%;
+  }
+}
