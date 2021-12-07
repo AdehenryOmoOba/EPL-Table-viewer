@@ -23,6 +23,7 @@ body {
   left: 0;
   display: grid;
   place-items: center;
+  transition: "all 2s ease";
 }
 .\.modal-overlay {
   display: flex;
