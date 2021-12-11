@@ -4,7 +4,7 @@ let modalDiv = document.createElement("div");
 let modalMsgHead = document.createElement("h3");
 let modalMsg = document.createElement("p");
 modalMsgHead.textContent = "Modal message!";
-modalMsg.textContent = `Hello frieds, this is the up-to-date English premier league table viewer. This app is built by AdehenryDev. Let's build together...`;
+modalMsg.textContent = `Hello friends, this is the up-to-date English premier league table viewer. This app is built by AdehenryDev. Let's build together...`;
 let modalOverlay = document.createElement("div");
 const body = document.querySelector("body");
 let logo = document.querySelector(".image");
@@ -63,4 +63,4 @@ async function premierLeague() {
   }
 }
 
-// premierLeague();
+premierLeague();
