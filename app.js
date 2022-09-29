@@ -1,4 +1,4 @@
-import { teamLogos, rowsGen, footballURL } from "./data.js";
+import {rowsGen, footballURL,fetchOptions } from "./data.js";
 
 let modalDiv = document.createElement("div");
 let modalMsgHead = document.createElement("h3");
@@ -37,28 +37,28 @@ document.addEventListener("keydown", (event) => {
 });
 
 async function premierLeague() {
-  const response = await fetch(footballURL);
+  const response = await fetch(footballURL,fetchOptions);
   const data = await response.json();
-  let rows = await rowsGen();
-  for (let i = 0; i < data.length; i++) {
+  let rows =  rowsGen();
+  for (let i = 0; i < 20; i++) {
     let customObj = {
-      teamId: `${teamLogos[data[i].team_id]}`,
-      imgAltAttr: `${data[i].team_name}-logo`,
-      teamPosition: data[i].position,
-      teamName: data[i].team_name,
-      gamesPlayed: data[i].overall_gp,
-      gamesWin: data[i].overall_w,
-      gamesDraw: data[i].overall_d,
-      gamesLoss: data[i].overall_l,
-      goalsScore: data[i].overall_gs,
-      goalConceed: data[i].overall_ga,
-      goalDiff: data[i].gd,
-      form: data[i].recent_form,
-      points: data[i].points,
+      imgAltAttr: `${data.response[0].league.standings[0][i].team.name}-logo`,
+      teamLogoSrcAttr: data.response[0].league.standings[0][i].team.logo,
+      teamPosition: data.response[0].league.standings[0][i].rank,
+      teamName: data.response[0].league.standings[0][i].team.name,
+      gamesPlayed: data.response[0].league.standings[0][i].all.played,
+      gamesWin: data.response[0].league.standings[0][i].all.win,
+      gamesDraw: data.response[0].league.standings[0][i].all.draw,
+      gamesLoss: data.response[0].league.standings[0][i].all.lose,
+      goalsScore: data.response[0].league.standings[0][i].all.goals.for,
+      goalConceed: data.response[0].league.standings[0][i].all.goals.against,
+      goalDiff: data.response[0].league.standings[0][i].goalsDiff,
+      form: data.response[0].league.standings[0][i].form,
+      points: data.response[0].league.standings[0][i].points,
     };
     rows[
       i
-    ].innerHTML = `<td><img src=${customObj.teamId} alt=${customObj.imgAltAttr}></td><td>${customObj.teamPosition}</td><td>${customObj.teamName}</td><td>${customObj.gamesPlayed}</td><td>${customObj.gamesWin}</td><td>${customObj.gamesDraw}</td><td>${customObj.gamesLoss}</td><td>${customObj.goalsScore}</td><td>${customObj.goalConceed}</td><td>${customObj.goalDiff}</td><td>${customObj.form}</td><td>${customObj.points}</td>`;
+    ].innerHTML = `<td><img src=${customObj.teamLogoSrcAttr} alt=${customObj.imgAltAttr}></td><td>${customObj.teamPosition}</td><td>${customObj.teamName}</td><td>${customObj.gamesPlayed}</td><td>${customObj.gamesWin}</td><td>${customObj.gamesDraw}</td><td>${customObj.gamesLoss}</td><td>${customObj.goalsScore}</td><td>${customObj.goalConceed}</td><td>${customObj.goalDiff}</td><td>${customObj.form}</td><td>${customObj.points}</td>`;
     tableBody.appendChild(rows[i]);
   }
 }
