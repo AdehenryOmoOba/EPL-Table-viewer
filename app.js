@@ -39,22 +39,23 @@ document.addEventListener("keydown", (event) => {
 async function premierLeague() {
   const response = await fetch(footballURL,fetchOptions);
   const data = await response.json();
+  const info = data.response[0].league.standings[0]
   let rows =  rowsGen();
   for (let i = 0; i < 20; i++) {
     let customObj = {
-      imgAltAttr: `${data.response[0].league.standings[0][i].team.name}-logo`,
-      teamLogoSrcAttr: data.response[0].league.standings[0][i].team.logo,
-      teamPosition: data.response[0].league.standings[0][i].rank,
-      teamName: data.response[0].league.standings[0][i].team.name,
-      gamesPlayed: data.response[0].league.standings[0][i].all.played,
-      gamesWin: data.response[0].league.standings[0][i].all.win,
-      gamesDraw: data.response[0].league.standings[0][i].all.draw,
-      gamesLoss: data.response[0].league.standings[0][i].all.lose,
-      goalsScore: data.response[0].league.standings[0][i].all.goals.for,
-      goalConceed: data.response[0].league.standings[0][i].all.goals.against,
-      goalDiff: data.response[0].league.standings[0][i].goalsDiff,
-      form: data.response[0].league.standings[0][i].form,
-      points: data.response[0].league.standings[0][i].points,
+      imgAltAttr: `${info[i].team.name}-logo`,
+      teamLogoSrcAttr: info[i].team.logo,
+      teamPosition: info[i].rank,
+      teamName: info[i].team.name,
+      gamesPlayed: info[i].all.played,
+      gamesWin: info[i].all.win,
+      gamesDraw: info[i].all.draw,
+      gamesLoss: info[i].all.lose,
+      goalsScore: info[i].all.goals.for,
+      goalConceed: info[i].all.goals.against,
+      goalDiff: info[i].goalsDiff,
+      form: info[i].form,
+      points: info[i].points,
     };
     rows[
       i
